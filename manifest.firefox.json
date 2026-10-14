@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "ColorGeek: Color Picker",
+  "short_name": "ColorGeek",
+  "version": "1.0.0",
+  "description": "Pick any colour on your screen and copy it as HEX, RGB or HSL. Keeps your recent colours, checks contrast and exports a palette.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "contextMenus",
+    "clipboardWrite"
+  ],
+  "background": {
+    "scripts": [
+      "colors.js",
+      "background.js"
+    ]
+  },
+  "action": {
+    "default_title": "ColorGeek: pick a colour",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "commands": {
+    "pick-colour": {
+      "suggested_key": {
+        "default": "Alt+Shift+E"
+      },
+      "description": "Pick a colour on this page"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "homepage_url": "https://techygeekshome.info/browser-extensions/colorgeek/",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "colorgeek@techygeekshome.info",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  }
+}

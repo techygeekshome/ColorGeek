@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>ColorGeek</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<header>
+  <img src="icons/icon32.png" alt="">
+  <div>
+    <div class="brand">ColorGeek</div>
+    <div class="sub">Color Picker</div>
+  </div>
+</header>
+
+<div class="sec">
+  <button class="primary" id="pick">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.4 2.6a2.9 2.9 0 0 0-4.1 0l-2.6 2.6-1.1-1.1-1.4 1.4 1.1 1.1-7.4 7.4c-.6.6-.9 1.4-.9 2.2V19l-1 1.6L3.4 22 5 21h2.2c.8 0 1.6-.3 2.2-.9l7.4-7.4 1.1 1.1 1.4-1.4-1.1-1.1 2.6-2.6a2.9 2.9 0 0 0 0-4.1zM8 18.7c-.2.2-.5.3-.8.3H5v-2.2c0-.3.1-.6.3-.8l7.4-7.4 2.7 2.7z"/></svg>
+    <span id="pickLabel">Pick a colour</span>
+  </button>
+  <div class="row between">
+    <span class="muted" id="hint">Then click any colour on screen.</span>
+    <button class="link" id="magnify" hidden>Use the magnifier</button>
+  </div>
+  <div class="msg" id="msg" role="status"></div>
+</div>
+
+<div class="card" id="current">
+  <div class="empty" id="empty">No colour picked yet. Press <b>Pick a colour</b>, then click the colour you want.</div>
+  <div class="cur" id="cur" hidden>
+    <div class="big" id="swatch"></div>
+    <div class="vals">
+      <div class="val"><span class="k">HEX</span><code id="vHex"></code><button class="copy" data-f="hex">Copy</button></div>
+      <div class="val"><span class="k">RGB</span><code id="vRgb"></code><button class="copy" data-f="rgb">Copy</button></div>
+      <div class="val"><span class="k">HSL</span><code id="vHsl"></code><button class="copy" data-f="hsl">Copy</button></div>
+    </div>
+  </div>
+  <div class="contrast" id="contrast" hidden>
+    <div class="ct white"><span class="aa" id="sWhite">Aa</span><div><div class="on">On white</div><div class="r" id="rWhite"></div><div class="g" id="gWhite"></div></div></div>
+    <div class="ct black"><span class="aa" id="sBlack">Aa</span><div><div class="on">On black</div><div class="r" id="rBlack"></div><div class="g" id="gBlack"></div></div></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="row between">
+    <span class="lab">Copy as I pick</span>
+    <div class="seg" id="format"><button data-f="hex">HEX</button><button data-f="rgb">RGB</button><button data-f="hsl">HSL</button></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="row between">
+    <span class="lab">Your colours <span class="muted" id="count"></span></span>
+    <button class="link" id="clear">Clear</button>
+  </div>
+  <div class="grid" id="history"></div>
+  <div class="row exp">
+    <button class="small" id="expCss">Export CSS</button>
+    <button class="small" id="expJson">Export JSON</button>
+  </div>
+  <div class="export" id="export" hidden>
+    <textarea id="expText" readonly spellcheck="false"></textarea>
+    <div class="row">
+      <button class="small on" id="expCopy">Copy</button>
+      <button class="small" id="expSave">Save file</button>
+      <button class="link" id="expClose">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="foot"><span id="shortcut"></span><a href="https://techygeekshome.info/browser-extensions/colorgeek/" target="_blank" rel="noopener">Help</a></div>
+<script src="colors.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>
